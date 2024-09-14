@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="bio.css" rel="stylesheet">
+    <title>@texeira</title>
+    <style>
+        /* Estilos para a tela de boas-vindas */
+        .userPage_clickToEnterOverlay__yTl7T {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Fundo preto semi-transparente */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000; /* Garante que a tela de boas-vindas fique sobre todo o conteúdo */
+            color: white;
+            font-family: 'Poppins', sans-serif; /* Fonte estilizada */
+            backdrop-filter: blur(10px); /* Efeito de desfoque */
+        }
+        .userPage_clickToEnterText__3qgKs {
+            font-weight: 700;
+            font-size: 32px;
+            text-align: center;
+        }
+        /* Estilos para o vídeo de fundo e a página principal */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            color: white;
+            font-family: 'Poppins', sans-serif; /* Fonte estilizada */
+        }
+        .degrade {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none; /* Remove a borda do botão */
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            font-family: 'Poppins', sans-serif; /* Fonte estilizada */
+        }
+        .degrade:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .botoeslinks a {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Página de boas-vindas -->
+    <div class="userPage_clickToEnterOverlay__yTl7T" id="welcome-screen">
+        <div class="userPage_clickToEnterText__3qgKs">click to enter...</div>
+    </div>
+
+    <!-- Música de fundo -->
+    <audio id="background-audio" preload="auto" loop>
+        <source src="https://r2.guns.lol/3c78b099-7cb2-4f05-a355-5e433d972c6d.mp3" type="audio/mp3">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <!-- Vídeo de fundo -->
+    <video class="background-video" autoplay muted loop>
+        <source src="https://r2.guns.lol/998b5845-f8b9-496d-8843-dc967bd158b9.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+
+    <!-- Conteúdo da página -->
+    <div class="container">
+        <header>
+            <img src="image/foto.png" alt="foto perfil">
+            <h1>Texeira.</h1>
+            <p>desenvolvedor full stack.</p>
+        </header>
+
+        <section class="botoeslinks">
+            <a href="https://discord.gg/hydraapps" target="_blank" class="click">
+                <button class="degrade">
+                    <span>Discord</span>
+                    <i class="bi bi-discord"></i>
+                </button>
+            </a>
+            <a href="https://www.instagram.com/_gabrielll.f?igsh=eXZ6ems1Nzh1NjF1&utm_source=qr" target="_blank" class="click">
+                <button class="degrade">
+                    <span>Instagram</span>
+                    <i class="bi bi-person-lines-fill"></i>
+                </button>
+            </a>
+            <a href="https://github.com/Texeirarl" target="_blank" class="click">
+                <button class="degrade">
+                    <span>Github</span>
+                    <i class="bi bi-github"></i>
+                </button>
+            </a>
+        </section><!--botoeslinks-->
+
+        <footer>
+            <a href="#" class="outroslinks degrade" target="_blank"><i class="bi bi-brilliance"></i></a>
+        </footer>
+    </div><!--container-->   
+
+    <!-- Script para controle de interação -->
+    <script>
+        document.getElementById('welcome-screen').addEventListener('click', function() {
+            // Oculta a tela de boas-vindas
+            this.style.display = 'none';
+            
+            // Reproduz a música
+            var audio = document.getElementById('background-audio');
+            audio.play();
+        });
+
+        // Script para controle do áudio
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-audio');
+
+            // Tenta reproduzir o áudio automaticamente
+            function tryPlayAudio() {
+                audio.play().catch(function(error) {
+                    console.log('Autoplay was prevented.');
+                });
+            }
+
+            tryPlayAudio();
+        });
+
+        // Carrega o script de efeitos de cursor
+        (self.__next_s=self.__next_s||[]).push(["https://unpkg.com/cursor-effects@latest/dist/browser.js",{"id":"_cursor"}]);
+    </script>
+</body>
+</html>

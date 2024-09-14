@@ -1,0 +1,99 @@
+html {
+    height: 100vh;
+    font-size: 14px;
+}
+
+body {
+    background-color: rgb(32, 32, 32);
+    height: 100%;
+}
+
+header img {
+    max-width: 120px;
+    margin-bottom: 20px;
+    border-radius: 50%; /* Faz a imagem ficar redonda */
+    border: 3px solid #464646; /* Opcional: Adiciona uma borda branca em torno da imagem */
+}
+
+
+.container {
+    height: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.degrade {
+    background: linear-gradient(to right, #000000, #1900ff);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header img {
+    max-width: 120px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+/* ESTILO DOS BOTÕES */
+
+section.botoeslinks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;   
+}
+
+a.click button {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #ffff;
+    transition: .2s;
+}
+
+a.click i {
+    font-size: 1.5em;
+}
+
+a.click button:hover, footer a.outroslinks:hover{
+    transform: scale(1.05);
+}
+
+footer{
+    text-align: center;
+    margin: 30px;
+}
+
+footer a.outroslinks{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    font-size: 2em;
+    line-height: 60px;
+    border-radius: 50px;
+    margin: 0 10px;
+}
